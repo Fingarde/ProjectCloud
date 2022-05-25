@@ -1,0 +1,11 @@
+fr/iut/error/Error.class
+fr/iut/loan_approval/exceptions/LoanApprovalError.class
+fr/iut/loan_approval/verifiers/LoanApprovalVerifier.class
+fr/iut/loan_approval/repository/LoanApprovalRepository.class
+fr/iut/loan_approval/services/LoanApprovalService.class
+fr/iut/utils/IdGenerator.class
+fr/iut/loan_approval/controllers/LoanApprovalController.class
+fr/iut/AccManagerApplication.class
+fr/iut/ServletInitializer.class
+fr/iut/loan_approval/model/LoanApproval.class
+fr/iut/error/ErrorBean.class

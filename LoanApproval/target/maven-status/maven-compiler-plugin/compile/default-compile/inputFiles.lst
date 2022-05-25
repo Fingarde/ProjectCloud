@@ -1,0 +1,12 @@
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/loan_approval/verifiers/LoanApprovalVerifier.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/ObjectifyConfig.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/loan_approval/controllers/LoanApprovalController.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/ServletInitializer.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/error/Error.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/loan_approval/services/LoanApprovalService.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/error/ErrorBean.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/AccManagerApplication.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/utils/IdGenerator.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/loan_approval/model/LoanApproval.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/loan_approval/repository/LoanApprovalRepository.java
+/home/timothe/Projects/Licence/Cloud/Project/api/LoanApproval/src/main/java/fr/iut/loan_approval/exceptions/LoanApprovalError.java

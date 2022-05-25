@@ -1,4 +1,4 @@
-package fr.iut.loan_approval.repository;
+package fr.iut.check_account.repository;
 
 import org.springframework.stereotype.Repository;
 

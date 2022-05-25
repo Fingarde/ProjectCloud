@@ -1,4 +1,4 @@
-package fr.iut.loan_approval.exceptions;
+package fr.iut.check_account.exceptions;
 
 import fr.iut.error.Error;
 import org.springframework.http.HttpStatus;

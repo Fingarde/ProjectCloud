@@ -1,4 +1,4 @@
-package fr.iut.loan_approval.exception;
+package fr.iut.check_account.exception;
 
 
 import me.alidg.errors.annotation.ExceptionMapping;

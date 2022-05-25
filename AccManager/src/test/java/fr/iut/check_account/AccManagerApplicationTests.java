@@ -1,4 +1,4 @@
-package fr.iut.loan_approval;
+package fr.iut.check_account;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

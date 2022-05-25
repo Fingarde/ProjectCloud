@@ -1,6 +1,6 @@
-package fr.iut.loan_approval.verifiers;
+package fr.iut.check_account.verifiers;
 
-import fr.iut.loan_approval.model.BankAccount;
+import fr.iut.check_account.model.BankAccount;
 
 public class BankAccountVerifier {
 

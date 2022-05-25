@@ -1,12 +1,18 @@
-package fr.iut.loan_approval.services;
+package fr.iut.app_manager.services;
 
-import fr.iut.loan_approval.model.Approval;
-import fr.iut.loan_approval.repository.ApprovalRepository;
+import fr.iut.app_manager.exceptions.ApprovalError;
+import fr.iut.app_manager.model.Approval;
+import fr.iut.app_manager.repository.ApprovalRepository;
+import fr.iut.app_manager.verifiers.ApprovalVerifier;
+import fr.iut.error.Error;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class ApprovalService {
     @Autowired
     private ApprovalRepository approvalRepository;
@@ -15,15 +21,31 @@ public class ApprovalService {
         try {
             return approvalRepository.getAllApproval();
         } catch (Exception e) {
-            throw new BankAccountException("Erreur lors de la récupération des comptes");
+            if(e instanceof Error) {
+                System.err.println(e.getMessage());
+                if (((Error) e).getBase() != null) ((Error) e).getBase().printStackTrace();
+                throw e;
+            }
+
+            e.printStackTrace();
+            throw new ApprovalError("Error fetching approvals", HttpStatus.INTERNAL_SERVER_ERROR,e);
         }
     }
 
     public void addApproval(Approval approval) {
+        if (!ApprovalVerifier.verifyApproval(approval)) {
+            throw new ApprovalError("Error approval is not valid", HttpStatus.UNPROCESSABLE_ENTITY);
+        }
         try {
             approvalRepository.addApproval(approval);
         } catch (Exception e) {
-            throw new BankAccountException("Erreur dans l'ajout du compte");
+            if(e instanceof Error) {
+                System.err.println(e.getMessage());
+                if (((Error) e).getBase() != null) ((Error) e).getBase().printStackTrace();
+                throw e;
+            }
+
+            throw new ApprovalError("Error adding approvals", HttpStatus.INTERNAL_SERVER_ERROR,e);
         }
     }
 
@@ -31,21 +53,50 @@ public class ApprovalService {
         try {
             approvalRepository.deleteApproval(approval);
         } catch (Exception e) {
-            throw new BankAccountException("Erreur dans la suppression du compte");
+            if(e instanceof Error) {
+                System.err.println(e.getMessage());
+                if (((Error) e).getBase() != null) ((Error) e).getBase().printStackTrace();
+                throw e;
+            }
+
+            e.printStackTrace();
+            throw new ApprovalError("Error deleting approval", HttpStatus.INTERNAL_SERVER_ERROR,e);
         }
     }
 
-    public Approval getOnBankAccount(String suuid) {
+    public Approval getOnBankAccountPerUuid(String suuid) {
         UUID uuid;
         try {
             uuid = UUID.fromString(suuid);
         } catch (Exception e) {
-            throw new BankAccountException("UUID incorrect");
+            throw new ApprovalError("Error parsing UUID", HttpStatus.UNPROCESSABLE_ENTITY,e);
         }
         try {
-            return approvalRepository.getOneApproval(uuid);
+            return approvalRepository.getOneApprovalPerUuid(uuid);
         } catch (Exception e) {
-            throw new BankAccountException("Compte bancaire non existant");
+            if(e instanceof Error) {
+                System.err.println(e.getMessage());
+                if (((Error) e).getBase() != null) ((Error) e).getBase().printStackTrace();
+                throw e;
+            }
+
+            e.printStackTrace();
+            throw new ApprovalError("Error fetching approval", HttpStatus.INTERNAL_SERVER_ERROR,e);
+        }
+    }
+
+    public Approval getOnBankAccountPerIdAccount(long idAccount) {
+        try {
+            return approvalRepository.getOneApprovalPerIdAccount(idAccount);
+        } catch (Exception e) {
+            if(e instanceof Error) {
+                System.err.println(e.getMessage());
+                if (((Error) e).getBase() != null) ((Error) e).getBase().printStackTrace();
+                throw e;
+            }
+
+            e.printStackTrace();
+            throw new ApprovalError("Error fetching approval", HttpStatus.INTERNAL_SERVER_ERROR,e);
         }
     }
 }

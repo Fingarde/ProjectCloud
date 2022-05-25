@@ -1,7 +1,6 @@
-package fr.iut.loan_approval.controller;
+package fr.iut.check_account.controller;
 
-import fr.iut.loan_approval.Couille;
-import fr.iut.loan_approval.service.CheckAccountService;
+import fr.iut.check_account.service.CheckAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

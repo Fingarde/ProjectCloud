@@ -1,6 +1,6 @@
-package fr.iut.loan_approval.service;
+package fr.iut.check_account.service;
 
-import fr.iut.loan_approval.exception.UuidException;
+import fr.iut.check_account.exception.UuidException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

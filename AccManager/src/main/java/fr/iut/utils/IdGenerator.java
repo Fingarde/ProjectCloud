@@ -1,4 +1,4 @@
-package fr.iut.acc_manager.utils;
+package fr.iut.utils;
 
 import java.util.UUID;
 

@@ -1,10 +1,14 @@
-package fr.iut.acc_manager.exceptions;
+package fr.iut.app_manager.exceptions;
 
 import fr.iut.error.Error;
 import org.springframework.http.HttpStatus;
 
-public class BankError extends Error {
-    public BankError(String message, HttpStatus status) {
+public class ApprovalError extends Error {
+    public ApprovalError(String message, HttpStatus status) {
         super(message, status);
+    }
+
+    public ApprovalError(String message, HttpStatus status, Exception base) {
+        super(message, status, base);
     }
 }
