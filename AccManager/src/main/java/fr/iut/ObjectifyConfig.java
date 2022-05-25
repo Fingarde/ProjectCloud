@@ -2,7 +2,7 @@ package fr.iut;
 
 import com.googlecode.objectify.ObjectifyFilter;
 import com.googlecode.objectify.ObjectifyService;
-import fr.iut.check_account.model.BankAccount;
+import fr.iut.acc_manager.model.BankAccount;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;

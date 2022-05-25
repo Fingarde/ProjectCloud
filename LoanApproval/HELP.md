@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'fr.iut..acc_manager' is invalid and this project uses 'fr.iut.check_account' instead.
+* The original package name 'fr.iut..acc_manager' is invalid and this project uses 'fr.iut.acc_manager' instead.
 
 # Getting Started
 

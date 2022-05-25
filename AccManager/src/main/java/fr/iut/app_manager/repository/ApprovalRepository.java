@@ -1,6 +1,6 @@
 package fr.iut.app_manager.repository;
 
-import fr.iut.check_account.exceptions.BankError;
+import fr.iut.acc_manager.exceptions.BankError;
 import fr.iut.app_manager.model.Approval;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
