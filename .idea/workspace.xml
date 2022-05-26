@@ -5,37 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9805ef25-bae2-4dc0-b17b-8e79f7c8c7e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/appengine/app.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/AccManagerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/ObjectifyConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/ServletInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/controllers/ApprovalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/exceptions/ApprovalError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/model/Approval.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/repository/ApprovalRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/services/ApprovalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/verifiers/ApprovalVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/error/Error.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/error/ErrorBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/utils/IdGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/main/resources/messages.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppManager/src/test/java/fr/iut/acc_manager/AccManagerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/controllers/BankAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/controllers/BankAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/repository/BankAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/repository/BankAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/services/BankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/services/BankAccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/service/CheckAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/service/CheckAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/app_manager/controllers/ApprovalController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/app_manager/exceptions/ApprovalError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/app_manager/model/Approval.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/app_manager/repository/ApprovalRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/app_manager/services/ApprovalService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/app_manager/verifiers/ApprovalVerifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CheckAccount/check_account.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccount/check_account.iml" afterDir="false" />
     </list>
     <list id="63979308-0342-434e-955f-e3f6f2e9cd86" name="Changes by antoine" comment="" />
     <list id="d6ea0f70-b519-4b06-be7a-733e247e8e8e" name="Changes by jotot" comment="" />
@@ -63,15 +41,15 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/antoine/Documents/projetCloud/ProjectCloud",
+    "spring.configuration.checksum": "9e268516085ea4b50bde0a241dc11695"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jotot\Desktop\3A\Cloud\ProjectCloud" />
@@ -91,6 +69,36 @@
       <recent name="fr.iut.app_manager.sanitizers" />
     </key>
   </component>
+  <component name="RunManager" selected="Spring Boot.AccManagerApplication">
+    <configuration name="AccManagerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="app_manager" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.iut.AccManagerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="acc_manager" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.iut.AccManagerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckAccountApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="check_account" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.iut.check_account.CheckAccountApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoanApprovalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="loan_approval" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="fr.iut.LoanApprovalApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -99,8 +107,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652780570460</updated>
+      <workItem from="1653586257222" duration="446000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -112,6 +124,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
