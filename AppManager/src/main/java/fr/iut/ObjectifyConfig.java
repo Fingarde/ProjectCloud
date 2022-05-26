@@ -2,7 +2,7 @@ package fr.iut;
 
 import com.googlecode.objectify.ObjectifyFilter;
 import com.googlecode.objectify.ObjectifyService;
-import fr.iut.acc_manager.model.BankAccount;
+import fr.iut.app_manager.model.Approval;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -40,7 +40,7 @@ public class ObjectifyConfig {
 
             ObjectifyService.init();
 
-            ObjectifyService.register(BankAccount.class);
+            ObjectifyService.register(Approval.class);
         }
 
         @Override

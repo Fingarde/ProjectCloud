@@ -68,7 +68,7 @@
 				<version>2.4.0</version>
 				<configuration>
 					<version>1</version>
-					<projectId>acc-manager-350509</projectId>
+					<projectId>app-manager-350510</projectId>
 				</configuration>
 			</plugin>
 		</plugins>

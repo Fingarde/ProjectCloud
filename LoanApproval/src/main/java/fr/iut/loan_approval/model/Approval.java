@@ -1,15 +1,11 @@
 package fr.iut.loan_approval.model;
 
-import com.googlecode.objectify.annotation.Id;
 
 import java.util.UUID;
 
 public class Approval {
-    @Id
     private String uuid;
-
     private long idAccount;
-
     private Response response;
 
     public Approval(){

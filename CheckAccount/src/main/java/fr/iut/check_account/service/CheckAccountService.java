@@ -19,7 +19,7 @@ public class CheckAccountService {
             RestTemplateBuilder builder = new RestTemplateBuilder();
             var template = builder.build();
 
-            BankAccount bankAccount = template.getForObject(Config.ACC_MANAGER_URL+"/bankaccount/", BankAccount.class, id);
+            BankAccount bankAccount = template.getForObject(Config.ACC_MANAGER_URL+"/bankaccount/"+id, BankAccount.class);
 
             return bankAccount.getRisk();
         } catch (Exception e) {

@@ -25,9 +25,9 @@ public class ApprovalController {
         return new ResponseEntity<>(serviceApproval.getOneApprovalPerUuid(uuid), HttpStatus.OK);
     }
 
-    @GetMapping("/{idAccount}")
-    public ResponseEntity<List<Approval>> getAllApprovalPerIdAccount(@PathVariable("idAccount") long idAccount) {
-        return new ResponseEntity<>(serviceApproval.getAllApprovalPerIdAccount(idAccount), HttpStatus.OK);
+    @GetMapping("/account/{idAccount}")
+    public ResponseEntity<Approval> getApprovalPerIdAccount(@PathVariable("idAccount") long idAccount) {
+        return new ResponseEntity<>(serviceApproval.getApprovalPerIdAccount(idAccount), HttpStatus.OK);
     }
 
     @PostMapping("")

@@ -85,9 +85,9 @@ public class ApprovalService {
         }
     }
 
-    public List<Approval> getAllApprovalPerIdAccount(long idAccount) {
+    public Approval getApprovalPerIdAccount(long idAccount) {
         try {
-            return approvalRepository.getAllApprovalPerIdAccount(idAccount);
+            return approvalRepository.getApprovalPerIdAccount(idAccount);
         } catch (Exception e) {
             if(e instanceof Error) {
                 System.err.println(e.getMessage());

@@ -1,7 +1,9 @@
+fr/iut/error/Error.class
 fr/iut/check_account/controller/CheckAccountController.class
 fr/iut/check_account/service/CheckAccountService.class
-fr/iut/check_account/exception/Bean.class
-fr/iut/check_account/exception/UuidException.class
+fr/iut/check_account/model/BankAccount.class
 fr/iut/check_account/CheckAccountApplication.class
-fr/iut/check_account/Couille.class
-fr/iut/check_account/repository/CheckAccountRepository.class
+fr/iut/config/Config.class
+fr/iut/check_account/model/Risk.class
+fr/iut/error/ErrorBean.class
+fr/iut/check_account/exception/CheckAccountError.class

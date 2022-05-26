@@ -27,11 +27,6 @@ public class BankAccountController {
         return new ResponseEntity<>(serviceBank.getOneBankAccountPerId(id), HttpStatus.OK);
     }
 
-    @GetMapping("/{name}")
-    public ResponseEntity<BankAccount> getOneBankAccountPerName(@PathVariable("name") String name) {
-        return new ResponseEntity<>(serviceBank.getOneBankAccountPerName(name), HttpStatus.OK);
-    }
-
     @PostMapping("")
     public ResponseEntity<BankAccount> postBankAccount(@RequestBody BankAccount bankAccount) {
         serviceBank.addBankAccount(bankAccount);
@@ -47,12 +42,12 @@ public class BankAccountController {
     @PutMapping("/{id}")
     public ResponseEntity<BankAccount> putBankAccount(@PathVariable("id") long id, @RequestBody BankAccount bankAccount) {
         BankAccount actualAccount = serviceBank.getOneBankAccountPerId(id);
-        actualAccount.setName(bankAccount.getName());
-        actualAccount.setSurname(bankAccount.getSurname());
-        actualAccount.setAccount(bankAccount.getAccount());
-        actualAccount.setRisk(bankAccount.getRisk());
+        if (bankAccount.getName()!=null) actualAccount.setName(bankAccount.getName());
+        if (bankAccount.getSurname()!=null) actualAccount.setSurname(bankAccount.getSurname());
+        actualAccount.setAccount(actualAccount.getAccount() + bankAccount.getAccount());
+        if (bankAccount.getRisk()!=null) actualAccount.setRisk(bankAccount.getRisk());
         serviceBank.addBankAccount(actualAccount);
-        return new ResponseEntity<>(bankAccount, HttpStatus.CREATED);
+        return new ResponseEntity<>(bankAccount, HttpStatus.OK);
     }
 
 }

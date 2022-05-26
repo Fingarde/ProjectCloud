@@ -16,8 +16,8 @@ public class LoanApprovalController {
     private LoanApprovalService serviceLoanApproval;
 
     @PostMapping("")
-    public ResponseEntity<LoanApproval> postLoanApproval(@RequestBody LoanApproval bankAccount) {
-        serviceLoanApproval.addLoanApproval(bankAccount);
-        return new ResponseEntity<>(bankAccount, HttpStatus.CREATED);
+    public ResponseEntity<String> postLoanApproval(@RequestBody LoanApproval bankAccount) {
+        String s = serviceLoanApproval.addLoanApproval(bankAccount);
+        return new ResponseEntity<>(s, HttpStatus.CREATED);
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
@@ -44,13 +45,13 @@ public class ApprovalRepository {
         }
     }
 
-    public List<Approval> getAllApprovalPerIdAccount(long idAccount) {
+    public Approval getApprovalPerIdAccount(long idAccount) {
         try{
-            List<Approval> approvals = (List<Approval>) getAllApproval().stream().filter(approval -> approval.getIdAccount() == idAccount);
+            Optional<Approval> approvals = getAllApproval().stream().filter(approval -> approval.getIdAccount() == idAccount).findFirst();
             if (approvals.isEmpty()) {
                 throw new Exception();
             }
-            return approvals;
+            return approvals.get();
         }catch (Exception e) {
             throw new ApprovalError("No entitiy found", HttpStatus.NOT_FOUND,e);
         }
