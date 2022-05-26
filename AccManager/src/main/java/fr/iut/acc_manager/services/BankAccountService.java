@@ -94,4 +94,22 @@ public class BankAccountService {
             throw new BankError("Error fetching account",  HttpStatus.INTERNAL_SERVER_ERROR,e);
         }
     }
+
+    public void modifyBankAccount(BankAccount bankAccount) {
+        if (!BankAccountVerifier.verifyBankAccount(bankAccount)){
+            throw new BankError("Error bank account is not valid", HttpStatus.UNPROCESSABLE_ENTITY);
+        }
+        try {
+            bankAccountRepository.modifyBankAccount(bankAccount);
+        } catch (Exception e) {
+            if(e instanceof Error) {
+                System.err.println(e.getMessage());
+                if (((Error) e).getBase() != null) ((Error) e).getBase().printStackTrace();
+                throw e;
+            }
+
+            e.printStackTrace();
+            throw new BankError("Error modify account", HttpStatus.INTERNAL_SERVER_ERROR,e);
+        }
+    }
 }

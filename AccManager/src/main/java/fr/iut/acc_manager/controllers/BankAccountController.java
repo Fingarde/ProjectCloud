@@ -43,4 +43,16 @@ public class BankAccountController {
         BankAccount bankAccount = serviceBank.getOneBankAccountPerId(id);
         serviceBank.deleteBankAccount(bankAccount);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<BankAccount> putBankAccount(@PathVariable("id") long id, @RequestBody BankAccount bankAccount) {
+        BankAccount actualAccount = serviceBank.getOneBankAccountPerId(id);
+        actualAccount.setName(bankAccount.getName());
+        actualAccount.setSurname(bankAccount.getSurname());
+        actualAccount.setAccount(bankAccount.getAccount());
+        actualAccount.setRisk(bankAccount.getRisk());
+        serviceBank.addBankAccount(actualAccount);
+        return new ResponseEntity<>(bankAccount, HttpStatus.CREATED);
+    }
+
 }

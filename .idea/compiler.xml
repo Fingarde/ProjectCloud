@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="loan_approval" />
         <module name="acc_manager" />
         <module name="check_account" />
+        <module name="loan_approval" />
+        <module name="app_manager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

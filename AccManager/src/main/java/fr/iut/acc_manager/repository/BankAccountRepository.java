@@ -52,4 +52,12 @@ public class BankAccountRepository {
         }
     }
 
+    public void modifyBankAccount(BankAccount bankAccount) {
+        try{
+            ofy().save().entity(bankAccount).now();
+        }catch (Exception e) {
+            throw new BankError("Unable to Modify", HttpStatus.UNPROCESSABLE_ENTITY, e);
+        }
+    }
+
 }

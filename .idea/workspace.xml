@@ -5,43 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9805ef25-bae2-4dc0-b17b-8e79f7c8c7e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/model/Risk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/model/Risk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/model/Risk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/appengine/app.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/AccManagerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/ObjectifyConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/ServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/controllers/ApprovalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/exceptions/ApprovalError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/model/Approval.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/repository/ApprovalRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/services/ApprovalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/verifiers/ApprovalVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/error/Error.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/error/ErrorBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/utils/IdGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/main/resources/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppManager/src/test/java/fr/iut/acc_manager/AccManagerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/ObjectifyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/ObjectifyConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/app_manager/repository/ApprovalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/app_manager/repository/ApprovalRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/check_account/controllers/BankAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/controllers/BankAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/check_account/exceptions/BankError.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/exceptions/BankError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/check_account/model/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/model/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/check_account/repository/BankAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/repository/BankAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/check_account/services/BankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/services/BankAccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/check_account/verifiers/BankAccountVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/verifiers/BankAccountVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/test/java/fr/iut/check_account/AccManagerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/test/java/fr/iut/acc_manager/AccManagerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckAccount/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccount/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/repository/CheckAccountRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/loan_approval.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/loan_approval.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/AccManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/LoanApprovalApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/ServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/ServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/controllers/LoanApprovalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/controllers/LoanApprovalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/model/LoanApproval.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/model/LoanApproval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/repository/LoanApprovalRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/services/LoanApprovalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/services/LoanApprovalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/verifiers/LoanApprovalVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/verifiers/LoanApprovalVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/utils/IdGenerator.java" beforeDir="false" />
-    </list>
-    <list id="63979308-0342-434e-955f-e3f6f2e9cd86" name="Changes by antoine" comment="" />
-    <list id="d6ea0f70-b519-4b06-be7a-733e247e8e8e" name="Changes by jotot" comment="">
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/check_account/controllers/BankAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/controllers/BankAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/controller/CheckAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/controller/CheckAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/exception/Bean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/exception/UuidException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/controllers/BankAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/controllers/BankAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/repository/BankAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/repository/BankAccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/services/BankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/services/BankAccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/service/CheckAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/service/CheckAccountService.java" afterDir="false" />
     </list>
+    <list id="63979308-0342-434e-955f-e3f6f2e9cd86" name="Changes by antoine" comment="" />
+    <list id="d6ea0f70-b519-4b06-be7a-733e247e8e8e" name="Changes by jotot" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,60 +55,39 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/controllers/BankAccountController.java">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="9805ef25-bae2-4dc0-b17b-8e79f7c8c7e5" />
-        <range start1="3" end1="5" start2="3" end2="5" changelist="9805ef25-bae2-4dc0-b17b-8e79f7c8c7e5" />
-        <range start1="24" end1="25" start2="24" end2="25" changelist="d6ea0f70-b519-4b06-be7a-733e247e8e8e" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectId" id="29Hqt8oBNKMe0BKtUtBqwIotxku" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "/home/timothe/Projects/Licence/Cloud/Project/api/CheckAccount/src/main/java/fr/iut",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jotot\Desktop\3A\Cloud\ProjectCloud" />
       <recent name="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut" />
       <recent name="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/controller" />
       <recent name="$PROJECT_DIR$/CheckAccount/src/main/java/fr/iut/check_account/model" />
       <recent name="$PROJECT_DIR$/LoanApproval/src/main/java" />
-      <recent name="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/error" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="fr.iut" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="fr.iut.loan_approval.model" />
       <recent name="fr.iut.check_account.exception" />
       <recent name="fr.iut.config" />
       <recent name="fr.iut.utils" />
-      <recent name="fr.iut.loan_approval.model" />
       <recent name="fr.iut.app_manager.sanitizers" />
     </key>
   </component>
@@ -136,5 +112,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

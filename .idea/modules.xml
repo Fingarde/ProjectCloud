@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AccManager/acc_manager.iml" filepath="$PROJECT_DIR$/AccManager/acc_manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/api.iml" filepath="$PROJECT_DIR$/api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AppManager/app_manager.iml" filepath="$PROJECT_DIR$/AppManager/app_manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/CheckAccount/check_account.iml" filepath="$PROJECT_DIR$/CheckAccount/check_account.iml" />
       <module fileurl="file://$PROJECT_DIR$/LoanApproval/loan_approval.iml" filepath="$PROJECT_DIR$/LoanApproval/loan_approval.iml" />
     </modules>
