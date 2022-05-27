@@ -21,17 +21,19 @@ public class ApprovalRepository {
         }
     }
 
-    public void addApproval(Approval approval) {
+    public Approval addApproval(Approval approval) {
         try{
             ofy().save().entity(approval).now();
+            return approval;
         }catch (Exception e) {
             throw new ApprovalError("Unable to Add", HttpStatus.UNPROCESSABLE_ENTITY,e);
         }
     }
 
-    public void deleteApproval(Approval approval) {
+    public Approval deleteApproval(Approval approval) {
         try{
             ofy().delete().entity(approval).now();
+            return approval;
         }catch (Exception e) {
             throw new ApprovalError("Unable to delete", HttpStatus.NOT_FOUND,e);
         }
@@ -49,9 +51,10 @@ public class ApprovalRepository {
         }
     }
 
-    public void modifyApproval(Approval approval) {
+    public Approval modifyApproval(Approval approval) {
         try{
             ofy().save().entity(approval).now();
+            return approval;
         }catch (Exception e) {
             throw new ApprovalError("Unable to Modify", HttpStatus.UNPROCESSABLE_ENTITY, e);
         }

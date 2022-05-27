@@ -22,7 +22,7 @@ public class BankAccount {
     }
 
     public BankAccount(String name, String surname, double account, Risk risk) {
-        this.id = IdGenerator.generate();;
+        this.id = IdGenerator.generate();
         this.name = name;
         this.surname = surname;
         this.account = account;

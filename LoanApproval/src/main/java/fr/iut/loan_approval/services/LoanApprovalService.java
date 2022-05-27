@@ -30,7 +30,7 @@ public class LoanApprovalService {
             Response responseBigAmount = addApproval(loanApproval.getAccountId());
             if (responseBigAmount == Response.ACCEPTED) {
                 BankAccount resp = addAmount(loanApproval);
-                return new LoanResponse(resp,"Approved");
+                return new LoanResponse(resp,responseBigAmount);
             } else {
                 BankAccount bankAccount;
                 try {
@@ -39,11 +39,11 @@ public class LoanApprovalService {
                     e.printStackTrace();
                     throw new LoanApprovalError("No account found", HttpStatus.NOT_FOUND,e);
                 }
-                return new LoanResponse(bankAccount,"Refused");
+                return new LoanResponse(bankAccount,responseBigAmount);
             }
         } else {
             BankAccount resp = addAmount(loanApproval);
-            return new LoanResponse(resp,"Approved");
+            return new LoanResponse(resp,Response.ACCEPTED);
         }
 
     }

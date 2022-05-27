@@ -5,6 +5,7 @@ import com.google.cloud.datastore.testing.LocalDatastoreHelper;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
 import com.googlecode.objectify.util.Closeable;
+import fr.iut.acc_manager.exceptions.BankError;
 import fr.iut.acc_manager.model.BankAccount;
 import fr.iut.acc_manager.model.Risk;
 import fr.iut.acc_manager.repository.BankAccountRepository;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
@@ -27,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class BankAccountControllerTest {
+class BankAccountRepositoryTests {
 	private static LocalDatastoreHelper helper = LocalDatastoreHelper.create(1.0);
 	private Closeable session;
 	@Autowired
@@ -86,6 +88,16 @@ class BankAccountControllerTest {
 	}
 
 	@Test
+	void getOneBankAccount_wrongId() throws Exception {
+		Mockito.when(bankAccountRepository.getOneBankAccountPerId(0)).thenThrow(new BankError("No entitiy found", HttpStatus.NOT_FOUND));
+
+		mockMvc.perform(MockMvcRequestBuilders
+						.get("/bankaccount/0")
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isNotFound());
+	}
+
+	@Test
 	void postBankAccount_sucess() throws Exception {
 		Mockito.when(bankAccountRepository.addBankAccount(bankAccount1)).thenReturn(bankAccount1);
 
@@ -96,6 +108,19 @@ class BankAccountControllerTest {
 
 		mockMvc.perform(mockRequest)
 				.andExpect(status().isCreated());
+	}
+
+	@Test
+	void postBankAccount_entityNull() throws Exception {
+		Mockito.when(bankAccountRepository.addBankAccount(null)).thenThrow(new BankError("Unable to Add", HttpStatus.UNPROCESSABLE_ENTITY));
+
+		MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.post("/bankaccount")
+				.contentType(MediaType.APPLICATION_JSON)
+				.accept(MediaType.APPLICATION_JSON)
+				.content(this.mapper.writeValueAsString(null));
+
+		mockMvc.perform(mockRequest)
+				.andExpect(status().isBadRequest());
 	}
 
 	@Test
@@ -113,6 +138,35 @@ class BankAccountControllerTest {
 	}
 
 	@Test
+	void putBankAccount_wrongId() throws Exception {
+		Mockito.when(bankAccountRepository.getOneBankAccountPerId(0)).thenThrow(new BankError("No entitiy found", HttpStatus.NOT_FOUND));
+		Mockito.when(bankAccountRepository.modifyBankAccount(bankAccount2)).thenReturn(bankAccount2);
+
+
+		MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.put("/bankaccount/0")
+				.contentType(MediaType.APPLICATION_JSON)
+				.accept(MediaType.APPLICATION_JSON)
+				.content(this.mapper.writeValueAsString(bankAccount2));
+
+		mockMvc.perform(mockRequest)
+				.andExpect(status().isNotFound());
+	}
+
+	@Test
+	void putBankAccount_entityNull() throws Exception {
+		Mockito.when(bankAccountRepository.getOneBankAccountPerId(bankAccount1.getId())).thenReturn(bankAccount1);
+		Mockito.when(bankAccountRepository.modifyBankAccount(null)).thenThrow(new BankError("Unable to Modify", HttpStatus.UNPROCESSABLE_ENTITY));
+
+		MockHttpServletRequestBuilder mockRequest = MockMvcRequestBuilders.put("/bankaccount/"+bankAccount1.getId())
+				.contentType(MediaType.APPLICATION_JSON)
+				.accept(MediaType.APPLICATION_JSON)
+				.content(this.mapper.writeValueAsString(null));
+
+		mockMvc.perform(mockRequest)
+				.andExpect(status().isBadRequest());
+	}
+
+	@Test
 	void deleteBankAccount_sucess() throws Exception {
 		Mockito.when(bankAccountRepository.getOneBankAccountPerId(bankAccount1.getId())).thenReturn(bankAccount1);
 
@@ -120,6 +174,16 @@ class BankAccountControllerTest {
 						.delete("/bankaccount/"+bankAccount1.getId())
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
+	}
+
+	@Test
+	void deleteBankAccount_wrongId() throws Exception {
+		Mockito.when(bankAccountRepository.getOneBankAccountPerId(0)).thenThrow(new BankError("Unable to delete", HttpStatus.NOT_FOUND));
+
+		mockMvc.perform(MockMvcRequestBuilders
+						.delete("/bankaccount/0")
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isNotFound());
 	}
 
 }

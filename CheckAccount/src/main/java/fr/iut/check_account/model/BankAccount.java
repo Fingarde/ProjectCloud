@@ -14,8 +14,8 @@ public class BankAccount {
     public BankAccount() {
     }
 
-    public BankAccount(long uuid, String name, String surname, double account, Risk risk) {
-        this.id = uuid;
+    public BankAccount(long id, String name, String surname, double account, Risk risk) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.account = account;

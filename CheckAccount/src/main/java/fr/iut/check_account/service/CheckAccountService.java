@@ -30,7 +30,7 @@ public class CheckAccountService {
             }
 
             e.printStackTrace();
-            throw new CheckAccountError("Error account found",  HttpStatus.NOT_FOUND,e);
+            throw new CheckAccountError("Error not account found",  HttpStatus.NOT_FOUND,e);
         }
     }
 }

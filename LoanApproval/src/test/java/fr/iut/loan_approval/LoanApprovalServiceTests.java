@@ -1,10 +1,10 @@
-package fr.iut.acc_manager;
+package fr.iut.loan_approval;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AccManagerApplicationTests {
+class LoanApprovalServiceTests {
 
 	@Test
 	void contextLoads() {

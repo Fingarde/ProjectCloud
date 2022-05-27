@@ -5,29 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9805ef25-bae2-4dc0-b17b-8e79f7c8c7e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_cloud_spring_cloud_gcp_autoconfigure_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_cloud_spring_cloud_gcp_core_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_cloud_spring_cloud_gcp_data_datastore_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_cloud_spring_cloud_gcp_starter_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_cloud_spring_cloud_gcp_starter_data_datastore_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_6_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AccManager/src/test/java/fr/iut/acc_manager/BankAccountControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/controllers/BankAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/controllers/BankAccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/model/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/model/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/repository/BankAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/java/fr/iut/acc_manager/repository/BankAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccManager/src/test/java/fr/iut/acc_manager/AccManagerApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/controllers/ApprovalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/controllers/ApprovalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/model/Approval.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/model/Approval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccManager/src/test/java/fr/iut/acc_manager/BankAccountControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccManager/src/test/java/fr/iut/acc_manager/BankAccountRepositoryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/repository/ApprovalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/repository/ApprovalRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/services/ApprovalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppManager/src/main/java/fr/iut/app_manager/services/ApprovalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/model/LoanResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/model/LoanResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/services/LoanApprovalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/LoanApproval/src/main/java/fr/iut/loan_approval/services/LoanApprovalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppManager/src/test/java/fr/iut/acc_manager/AccManagerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/AppManager/src/test/java/fr/iut/acc_manager/ApprovalRepositoryTests.java" afterDir="false" />
     </list>
     <list id="63979308-0342-434e-955f-e3f6f2e9cd86" name="Changes by antoine" comment="" />
     <list id="d6ea0f70-b519-4b06-be7a-733e247e8e8e" name="Changes by jotot" comment="" />
@@ -88,39 +70,23 @@
       <recent name="fr.iut.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BankAccountControllerTest">
-    <configuration name="AccManagerApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CheckAccountTests.getAllBankAccount_wrongId">
+    <configuration name="ApprovalRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="app_manager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.iut.acc_manager.AccManagerApplicationTests" />
+          <option name="PATTERN" value="fr.iut.acc_manager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="fr.iut.acc_manager" />
-      <option name="MAIN_CLASS_NAME" value="fr.iut.acc_manager.AccManagerApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BankAccountControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="acc_manager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fr.iut.acc_manager.AccManagerApplicationTests" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="fr.iut.acc_manager" />
-      <option name="MAIN_CLASS_NAME" value="fr.iut.acc_manager.BankAccountControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="fr.iut.acc_manager.ApprovalRepositoryTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankAccountControllerTest.getAllBankAccount_sucess (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BankAccountRepositoryTest.getAllBankAccount_sucess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="acc_manager" />
       <extension name="coverage">
         <pattern>
@@ -129,24 +95,70 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="fr.iut.acc_manager" />
-      <option name="MAIN_CLASS_NAME" value="fr.iut.acc_manager.BankAccountControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="fr.iut.acc_manager.BankAccountRepositoryTest" />
       <option name="METHOD_NAME" value="getAllBankAccount_sucess(org.springframework.test.web.servlet.MockMvc)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankAccountControllerTest.getAllBankAccount_sucess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BankAccountRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="acc_manager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.iut.acc_manager.AccManagerApplicationTests" />
+          <option name="PATTERN" value="fr.iut.acc_manager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="fr.iut.acc_manager" />
-      <option name="MAIN_CLASS_NAME" value="fr.iut.acc_manager.BankAccountControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="fr.iut.acc_manager.BankAccountRepositoryTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckAccountTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="check_account" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.iut.check_account.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.iut.check_account" />
+      <option name="MAIN_CLASS_NAME" value="fr.iut.check_account.CheckAccountTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckAccountTests.getAllBankAccount_sucess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="check_account" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.iut.check_account.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.iut.check_account" />
+      <option name="MAIN_CLASS_NAME" value="fr.iut.check_account.CheckAccountTests" />
       <option name="METHOD_NAME" value="getAllBankAccount_sucess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckAccountTests.getAllBankAccount_wrongId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="check_account" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.iut.check_account.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.iut.check_account" />
+      <option name="MAIN_CLASS_NAME" value="fr.iut.check_account.CheckAccountTests" />
+      <option name="METHOD_NAME" value="getAllBankAccount_wrongId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,10 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BankAccountControllerTest" />
-        <item itemvalue="JUnit.BankAccountControllerTest.getAllBankAccount_sucess (1)" />
-        <item itemvalue="JUnit.BankAccountControllerTest.getAllBankAccount_sucess" />
-        <item itemvalue="JUnit.AccManagerApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.CheckAccountTests.getAllBankAccount_wrongId" />
+        <item itemvalue="JUnit.CheckAccountTests" />
+        <item itemvalue="JUnit.CheckAccountTests.getAllBankAccount_sucess" />
+        <item itemvalue="JUnit.BankAccountRepositoryTests" />
+        <item itemvalue="JUnit.ApprovalRepositoryTests" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +211,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652780570460</updated>
       <workItem from="1653586257222" duration="10764000" />
-      <workItem from="1653638171092" duration="22152000" />
+      <workItem from="1653638171092" duration="31629000" />
     </task>
     <servers />
   </component>
