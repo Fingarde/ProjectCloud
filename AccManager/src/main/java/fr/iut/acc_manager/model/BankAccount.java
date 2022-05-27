@@ -21,8 +21,8 @@ public class BankAccount {
         id = IdGenerator.generate();
     }
 
-    public BankAccount(long id, String name, String surname, double account, Risk risk) {
-        this.id = id;
+    public BankAccount(String name, String surname, double account, Risk risk) {
+        this.id = IdGenerator.generate();;
         this.name = name;
         this.surname = surname;
         this.account = account;

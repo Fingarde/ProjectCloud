@@ -37,23 +37,23 @@ public class ApprovalRepository {
         }
     }
 
-    public Approval getOneApprovalPerUuid(UUID uuid) {
+    public Approval getApprovalPerIdAccount(long idAccount) {
         try{
-            return ofy().load().type(Approval.class).id(uuid.toString()).now();
+            Approval approval = ofy().load().type(Approval.class).id(idAccount).now();
+            if (approval==null) {
+                throw new ApprovalError("No entitiy found", HttpStatus.NOT_FOUND);
+            }
+            return approval;
         }catch (Exception e) {
             throw new ApprovalError("No entitiy found", HttpStatus.NOT_FOUND,e);
         }
     }
 
-    public Approval getApprovalPerIdAccount(long idAccount) {
+    public void modifyApproval(Approval approval) {
         try{
-            Optional<Approval> approvals = getAllApproval().stream().filter(approval -> approval.getIdAccount() == idAccount).findFirst();
-            if (approvals.isEmpty()) {
-                throw new Exception();
-            }
-            return approvals.get();
+            ofy().save().entity(approval).now();
         }catch (Exception e) {
-            throw new ApprovalError("No entitiy found", HttpStatus.NOT_FOUND,e);
+            throw new ApprovalError("Unable to Modify", HttpStatus.UNPROCESSABLE_ENTITY, e);
         }
     }
 }

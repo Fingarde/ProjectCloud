@@ -1,66 +1,92 @@
 package fr.iut.loan_approval.services;
 
 import fr.iut.config.Config;
+import fr.iut.error.Error;
+import fr.iut.loan_approval.exceptions.LoanApprovalError;
 import fr.iut.loan_approval.model.*;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class LoanApprovalService {
     private RestTemplate template = new RestTemplate();
 
-    public String addLoanApproval(LoanApproval loanApproval) {
-        Risk risk = template.getForObject(Config.CHECK_ACCOUNT_URL + "/checkaccount/"+loanApproval.getAccountId(), Risk.class);
+    public LoanResponse addLoanApproval(LoanApproval loanApproval) {
+        Risk risk;
 
-        if (risk == Risk.HIGH) {
-            Response responseRisk = addApproval(loanApproval.getAccountId());
-            if (responseRisk == Response.ACCEPTED) {
-                double resp = addAmount(loanApproval);
-                return "Approved : "+resp;
-            }else {
-                return "Refused";
+        try {
+            risk = template.getForObject(Config.CHECK_ACCOUNT_URL + "/checkaccount/"+loanApproval.getAccountId(), Risk.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new LoanApprovalError("No account found", HttpStatus.NOT_FOUND,e);
+        }
+
+        if (loanApproval.getAmount() >= 10000 || risk == Risk.HIGH) {
+            Response responseBigAmount = addApproval(loanApproval.getAccountId());
+            if (responseBigAmount == Response.ACCEPTED) {
+                BankAccount resp = addAmount(loanApproval);
+                return new LoanResponse(resp,"Approved");
+            } else {
+                BankAccount bankAccount;
+                try {
+                    bankAccount = template.getForObject(Config.ACC_MANAGER_URL + "/bankaccount/"+loanApproval.getAccountId(), BankAccount.class);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    throw new LoanApprovalError("No account found", HttpStatus.NOT_FOUND,e);
+                }
+                return new LoanResponse(bankAccount,"Refused");
             }
         } else {
-            if (loanApproval.getAmount() >= 10000) {
-                Response responseBigAmount = addApproval(loanApproval.getAccountId());
-                if (responseBigAmount == Response.ACCEPTED) {
-                    double resp = addAmount(loanApproval);
-                    return "Approved"+resp;
-                } else {
-                    return "Refused";
-                }
-            } else {
-                double resp = addAmount(loanApproval);
-                return "Approved : "+resp;
-            }
+            BankAccount resp = addAmount(loanApproval);
+            return new LoanResponse(resp,"Approved");
         }
+
     }
 
     private Response addApproval (long idAccount) {
         try {
-            Approval appr = template.getForObject(Config.APP_MANAGER_URL + "/approval/account/"+idAccount, Approval.class);
+            Approval appr = template.getForObject(Config.APP_MANAGER_URL + "/approval/"+idAccount, Approval.class);
             return appr.getResponse();
-        } catch (Exception e) {
+        } catch (Exception e1) {
             Approval approval = new Approval();
             approval.setIdAccount(idAccount);
             approval.setResponse(Response.REFUSED);
-            ResponseEntity<Approval> result = template.postForEntity(Config.APP_MANAGER_URL + "/approval", approval, Approval.class);
-            return result.getBody().getResponse();
+            try {
+                Approval result = template.postForObject(Config.APP_MANAGER_URL + "/approval", approval, Approval.class);
+                return result.getResponse();
+            } catch (Exception e2) {
+                e2.printStackTrace();
+                throw new LoanApprovalError("Error modify approval", HttpStatus.UNPROCESSABLE_ENTITY,e2);
+            }
         }
     }
 
-    private double addAmount (LoanApproval loanApproval) {
+    private BankAccount addAmount (LoanApproval loanApproval) {
+        BankAccount actualAccount;
+        try {
+            actualAccount = template.getForObject(Config.ACC_MANAGER_URL + "/bankaccount/"+loanApproval.getAccountId(), BankAccount.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new LoanApprovalError("No account found", HttpStatus.NOT_FOUND,e);
+        }
+
         BankAccount bankAccount = new BankAccount();
-        bankAccount.setId(loanApproval.getAccountId());
-        bankAccount.setAccount(loanApproval.getAmount());
+        bankAccount.setAccount(loanApproval.getAmount()+actualAccount.getAccount());
 
         HttpEntity<BankAccount> requestBody = new HttpEntity<>(bankAccount);
 
-        ResponseEntity<BankAccount> result = template.exchange(Config.ACC_MANAGER_URL + "/bankaccount/"+loanApproval.getAccountId(), HttpMethod.PUT, requestBody, BankAccount.class);
-        return result.getBody().getAccount();
+        try {
+            ResponseEntity<BankAccount> result = template.exchange(Config.ACC_MANAGER_URL + "/bankaccount/"+loanApproval.getAccountId(),HttpMethod.PUT, requestBody, BankAccount.class);
+            return result.getBody();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new LoanApprovalError("Error modify account", HttpStatus.UNPROCESSABLE_ENTITY,e);
+        }
     }
 
 }

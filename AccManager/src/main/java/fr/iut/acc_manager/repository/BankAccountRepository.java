@@ -20,17 +20,19 @@ public class BankAccountRepository {
         }
     }
 
-    public void addBankAccount(BankAccount bankAccount) {
+    public BankAccount addBankAccount(BankAccount bankAccount) {
         try{
             ofy().save().entity(bankAccount).now();
+            return bankAccount;
         }catch (Exception e) {
             throw new BankError("Unable to Add", HttpStatus.UNPROCESSABLE_ENTITY, e);
         }
     }
 
-    public void deleteBankAccount(BankAccount bankAccount) {
+    public BankAccount deleteBankAccount(BankAccount bankAccount) {
         try{
             ofy().delete().entity(bankAccount).now();
+            return bankAccount;
         }catch (Exception e) {
             throw new BankError("Unable to delete", HttpStatus.NOT_FOUND, e);
         }
@@ -38,7 +40,11 @@ public class BankAccountRepository {
 
     public BankAccount getOneBankAccountPerId(long id) {
         try{
-            return ofy().load().type(BankAccount.class).id(id).now();
+            BankAccount bankAccount = ofy().load().type(BankAccount.class).id(id).now();
+            if (bankAccount == null) {
+                throw new BankError("No entitiy found", HttpStatus.NOT_FOUND);
+            }
+            return bankAccount;
         }catch (Exception e) {
             throw new BankError("No entitiy found", HttpStatus.NOT_FOUND, e);
         }
@@ -52,9 +58,10 @@ public class BankAccountRepository {
         }
     }
 
-    public void modifyBankAccount(BankAccount bankAccount) {
+    public BankAccount modifyBankAccount(BankAccount bankAccount) {
         try{
             ofy().save().entity(bankAccount).now();
+            return bankAccount;
         }catch (Exception e) {
             throw new BankError("Unable to Modify", HttpStatus.UNPROCESSABLE_ENTITY, e);
         }

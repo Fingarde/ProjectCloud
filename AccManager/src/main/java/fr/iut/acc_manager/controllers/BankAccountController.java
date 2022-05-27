@@ -18,7 +18,7 @@ public class BankAccountController {
     private BankAccountService serviceBank;
 
     @GetMapping("")
-    public ResponseEntity<List<BankAccount>> getAllBankAcount() {
+    public ResponseEntity<List<BankAccount>> getAllBankAccount() {
         return new ResponseEntity<>(serviceBank.getAllBankAccount(), HttpStatus.OK);
     }
 
@@ -34,20 +34,21 @@ public class BankAccountController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBankAccount(@PathVariable("id") long id) {
+    public ResponseEntity<BankAccount> deleteBankAccount(@PathVariable("id") long id) {
         BankAccount bankAccount = serviceBank.getOneBankAccountPerId(id);
         serviceBank.deleteBankAccount(bankAccount);
+        return new ResponseEntity<>(bankAccount, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<BankAccount> putBankAccount(@PathVariable("id") long id, @RequestBody BankAccount bankAccount) {
+    public ResponseEntity<BankAccount> putAccount(@PathVariable("id") long id, @RequestBody BankAccount bankAccount) {
         BankAccount actualAccount = serviceBank.getOneBankAccountPerId(id);
         if (bankAccount.getName()!=null) actualAccount.setName(bankAccount.getName());
         if (bankAccount.getSurname()!=null) actualAccount.setSurname(bankAccount.getSurname());
-        actualAccount.setAccount(actualAccount.getAccount() + bankAccount.getAccount());
+        actualAccount.setAccount(bankAccount.getAccount());
         if (bankAccount.getRisk()!=null) actualAccount.setRisk(bankAccount.getRisk());
-        serviceBank.addBankAccount(actualAccount);
-        return new ResponseEntity<>(bankAccount, HttpStatus.OK);
+        serviceBank.modifyBankAccount(actualAccount);
+        return new ResponseEntity<>(actualAccount, HttpStatus.OK);
     }
 
 }

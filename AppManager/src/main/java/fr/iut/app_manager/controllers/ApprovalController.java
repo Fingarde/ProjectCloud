@@ -20,12 +20,7 @@ public class ApprovalController {
         return new ResponseEntity<>(serviceApproval.getAllApproval(), HttpStatus.OK);
     }
 
-    @GetMapping("/{uuid}")
-    public ResponseEntity<Approval> getOneApprovalPerUuid(@PathVariable("uuid") String uuid) {
-        return new ResponseEntity<>(serviceApproval.getOneApprovalPerUuid(uuid), HttpStatus.OK);
-    }
-
-    @GetMapping("/account/{idAccount}")
+    @GetMapping("/{idAccount}")
     public ResponseEntity<Approval> getApprovalPerIdAccount(@PathVariable("idAccount") long idAccount) {
         return new ResponseEntity<>(serviceApproval.getApprovalPerIdAccount(idAccount), HttpStatus.OK);
     }
@@ -36,9 +31,17 @@ public class ApprovalController {
         return new ResponseEntity<>(approval, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/{uuid}")
-    public void deleteApproval(@PathVariable("uuid") String uuid) {
-        Approval approval = serviceApproval.getOneApprovalPerUuid(uuid);
+    @DeleteMapping("/{id}")
+    public void deleteApproval(@PathVariable("id") long id) {
+        Approval approval = serviceApproval.getApprovalPerIdAccount(id);
         serviceApproval.deleteApproval(approval);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Approval> patchApproval(@PathVariable("id") long id, @RequestBody Approval approval) {
+        Approval actualApproval = serviceApproval.getApprovalPerIdAccount(id);
+        actualApproval.setResponse(approval.getResponse());
+        serviceApproval.modifyBankAccount(actualApproval);
+        return new ResponseEntity<>(actualApproval, HttpStatus.OK);
     }
 }

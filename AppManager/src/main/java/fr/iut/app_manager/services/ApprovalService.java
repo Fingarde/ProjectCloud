@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
+import static com.googlecode.objectify.ObjectifyService.ofy;
+
 @Service
 public class ApprovalService {
     @Autowired
@@ -64,27 +66,6 @@ public class ApprovalService {
         }
     }
 
-    public Approval getOneApprovalPerUuid(String suuid) {
-        UUID uuid;
-        try {
-            uuid = UUID.fromString(suuid);
-        } catch (Exception e) {
-            throw new ApprovalError("Error parsing UUID", HttpStatus.UNPROCESSABLE_ENTITY,e);
-        }
-        try {
-            return approvalRepository.getOneApprovalPerUuid(uuid);
-        } catch (Exception e) {
-            if(e instanceof Error) {
-                System.err.println(e.getMessage());
-                if (((Error) e).getBase() != null) ((Error) e).getBase().printStackTrace();
-                throw e;
-            }
-
-            e.printStackTrace();
-            throw new ApprovalError("Error fetching approval", HttpStatus.INTERNAL_SERVER_ERROR,e);
-        }
-    }
-
     public Approval getApprovalPerIdAccount(long idAccount) {
         try {
             return approvalRepository.getApprovalPerIdAccount(idAccount);
@@ -97,6 +78,24 @@ public class ApprovalService {
 
             e.printStackTrace();
             throw new ApprovalError("Error fetching approval", HttpStatus.INTERNAL_SERVER_ERROR,e);
+        }
+    }
+
+    public void modifyBankAccount(Approval approval) {
+        if (!ApprovalVerifier.verifyApproval(approval)){
+            throw new ApprovalError("Error bank account is not valid", HttpStatus.UNPROCESSABLE_ENTITY);
+        }
+        try {
+            approvalRepository.modifyApproval(approval);
+        } catch (Exception e) {
+            if(e instanceof Error) {
+                System.err.println(e.getMessage());
+                if (((Error) e).getBase() != null) ((Error) e).getBase().printStackTrace();
+                throw e;
+            }
+
+            e.printStackTrace();
+            throw new ApprovalError("Error modify account", HttpStatus.INTERNAL_SERVER_ERROR,e);
         }
     }
 }
