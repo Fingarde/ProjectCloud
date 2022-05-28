@@ -32,7 +32,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/CheckAccount" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/LoanApproval" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -201,7 +201,7 @@
       <updated>1652780570460</updated>
       <workItem from="1653586257222" duration="10764000" />
       <workItem from="1653638171092" duration="32361000" />
-      <workItem from="1653722758369" duration="1892000" />
+      <workItem from="1653722758369" duration="3262000" />
     </task>
     <servers />
   </component>
